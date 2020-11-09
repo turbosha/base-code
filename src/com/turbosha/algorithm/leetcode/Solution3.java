@@ -1,5 +1,8 @@
 package com.turbosha.algorithm.leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @Description #3：无重复字符的最长子串 中等
  * https://leetcode-cn.com/submissions/detail/93381348/
@@ -7,6 +10,28 @@ package com.turbosha.algorithm.leetcode;
  * @Date 2020/10/28 14:18
  */
 public class Solution3 {
+
+    /**
+     * 官方解法：滑动窗口
+     * 思路：双指针,end依次底层，start遇重复更新，end-start-1为最大长度并不断求max
+     *
+     * @param s
+     * @return
+     */
+    public int lengthOfLongestSubstring2(String s) {
+        int n = s.length(), ans = 0;
+        Map<Character, Integer> map = new HashMap<>();
+        for (int end = 0, start = 0; end < n; end++) {
+            char alpha = s.charAt(end);
+            if (map.containsKey(alpha)) {
+                start = Math.max(map.get(alpha), start);
+            }
+            ans = Math.max(ans, end - start + 1);
+            map.put(s.charAt(end), end + 1);
+        }
+        return ans;
+    }
+
 
     public int lengthOfLongestSubstring(String s) {
         // flag起始标记位，result，length最大子串长度，i
