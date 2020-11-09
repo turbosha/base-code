@@ -11,6 +11,11 @@ public class Solution10 {
         System.out.println(s.fib(48));
     }
 
+    /**
+     * 动态规划DP
+     * @param n
+     * @return
+     */
     public int fib(int n) {
         if (n == 0) return 0;
         int[] fib = new int[n + 1];
