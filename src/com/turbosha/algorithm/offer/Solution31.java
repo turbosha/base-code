@@ -3,7 +3,7 @@ package com.turbosha.algorithm.offer;
 import java.util.Stack;
 
 /**
- * #31：栈的押入、弹出序列
+ * #31：栈的压入、弹出序列
  */
 public class Solution31 {
 
