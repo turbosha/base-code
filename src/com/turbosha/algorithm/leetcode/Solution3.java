@@ -13,7 +13,7 @@ public class Solution3 {
 
     /**
      * 官方解法：滑动窗口
-     * 思路：双指针,end依次底层，start遇重复更新，end-start-1为最大长度并不断求max
+     * 思路：双指针,end依次递增，start遇重复更新，end-start-1为最大长度并不断求max
      *
      * @param s
      * @return
