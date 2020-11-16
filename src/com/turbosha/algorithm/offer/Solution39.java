@@ -15,11 +15,11 @@ public class Solution39 {
      * @return
      */
     public int majorityElement(int[] nums) {
-        int x = 0, votes = 0;
-        for (int num : nums) {
-            if (votes == 0) x = num;
-            votes += num == x ? 1 : -1;
+        int votes = 0, x = 0; //定义票数为0，众数为0
+        for (int i = 0; i < nums.length; i++) {
+            if (votes == 0) x = nums[i]; // 若票数为0，众数指向当前值
+            votes += (nums[i] == x) ? 1 : -1; //相等则票数+1，否则-1
         }
-        return x;
+        return x;// 返回众数
     }
 }

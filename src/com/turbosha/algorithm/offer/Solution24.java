@@ -5,16 +5,16 @@ package com.turbosha.algorithm.offer;
  * https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/
  */
 public class Solution24 {
+
     public ListNode reverseList(ListNode head) {
-        ListNode cur=head,pre=null,next;
-        while (cur!=null){
-            next=cur.next; // 首先保存 next
-            cur.next=pre; // 将当前节点的后继节点，执行pre
-            pre=cur; // 将 pre后移，变成 cur
-            cur=next; // 将cur后移，变成 next
+        ListNode cur = head, pre = null, next;
+        while (cur != null) {
+            next = cur.next;// 1、保存下一节点
+            cur.next = pre; // 2、将下一节点指向pre
+            pre = cur;  // 3、将pre指向cur
+            cur = next;  //4、将cur指向next
         }
-        // 因为cur为null了，所以取pre
-        return pre;
+        return pre; //结束条件是cur==null，故返回pre
     }
 
     //  Definition for singly-linked list.
